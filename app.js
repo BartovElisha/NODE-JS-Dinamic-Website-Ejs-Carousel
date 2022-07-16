@@ -5,7 +5,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // Server PORT Define
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Set Public path
 const path = require("path");
