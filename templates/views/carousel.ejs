@@ -3,7 +3,7 @@
             <!-- forEach loop -->
             <% imagesArray.forEach((image,index)=>{ %>
 
-            <!-- if/else -->
+            <!-- Regular if/else Statement -->
             <% if (index == 0) { %>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= index %>"
                 class="active" aria-current="true" aria-label="Slide"></button>
@@ -20,18 +20,11 @@
             <!-- forEach loop -->
             <% imagesArray.forEach((image,index)=>{ %>
 
-            <!-- if/else -->
-            <% if (index == 0) { %>
-            <div class="carousel-item active">
+            <!-- simple if-else statements -->
+            <% let active = (index == 0) ? "active" : ""; %>
+            <div class="carousel-item <%= active %>">
                 <img src="<%= image.download_url %>" class="image-flued d-block w-100" alt="...">
             </div>
-            <%} else { %>
-            <div class="carousel-item">
-                <img src="<%= image.download_url %>" class="image-flued d-block w-100" alt="...">
-            </div>
-            <% } %>
-            <!-- if/else -->
-
             <%})%>
             <!-- forEach loop -->
         </div>
