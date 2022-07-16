@@ -16,7 +16,7 @@ app.use(express.static(publicDirectoryPath));
 const viewsPath = path.join(__dirname,'./templates/views'); 
 app.set('views', viewsPath);
 
-const images = require('./modules/images');
+const image = require('./modules/images');
 
 // End Point test for
 // Send response to web brouser from Node server: localhost:3000/test
@@ -27,7 +27,7 @@ app.get('/test', (req, res) => {
 // End Point for
 // Send index.html response to brouser from Node server: localhost:3000
 app.get('', (req, res) => {
-    res.render("index");
+    res.render("index",{imagesArray: image});
 });
 
 app.listen(PORT, () => {
